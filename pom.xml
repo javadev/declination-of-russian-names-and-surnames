@@ -29,7 +29,7 @@
           <configuration>
               <archive>
                   <manifest>
-                      <mainClass>com.github.declinationofnames.DeclinationOfNamesApp</mainClass>
+                      <mainClass>com.github.declinationofnames.RussianName</mainClass>
                   </manifest>
               </archive>
           </configuration>

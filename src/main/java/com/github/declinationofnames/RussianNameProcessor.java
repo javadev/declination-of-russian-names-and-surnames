@@ -32,7 +32,7 @@ import java.util.regex.Pattern;
  * @author Valentyn Kolesnikov
  * @version $Revision$ $Date$
  */
-public class RussianNameProcessor {
+public final class RussianNameProcessor {
     static String sexM = "m";
     static String sexF = "f";
     // именительный
@@ -53,6 +53,9 @@ public class RussianNameProcessor {
     static String gcasePred = "prepositional";
     static String gcasePos = "prepositional";
     
+    private RussianNameProcessor() {        
+    }
+
     static Map<String, Map<String, List<Object>>> rules = new HashMap<String,
             Map<String, List<Object>>>() {{
         put("lastName", new HashMap<String, List<Object>>() {{
@@ -154,7 +157,7 @@ public class RussianNameProcessor {
         for (Map.Entry<String, Map<String, List<Object>>> type : rules.entrySet()) {
             for(Map.Entry<String, List<Object>> key : rules.get(type.getKey()).entrySet()) {
                 for(int i = 0, n = rules.get(type.getKey()).get(key.getKey()).size(); i < n; i++) {
-                    rules.get(type.getKey()).get(key.getKey()).set(i, rule(rules.get(type.getKey()).get(key.getKey())));
+                    rules.get(type.getKey()).get(key.getKey()).set(i, rule(rules.get(type.getKey()).get(key.getKey()).get(i)));
                 }
             }
         }
@@ -175,7 +178,7 @@ public class RussianNameProcessor {
     }
 
     // склоняем слово по указанному набору правил и исключений
-    private static String word(String word, String sex, String wordType, String gcase) {
+    public static String word(String word, String sex, String wordType, String gcase) {
         // исходное слово находится в именительном падеже
         if (gcase.equals(gcaseNom)) {
             return word;
@@ -273,10 +276,4 @@ public class RussianNameProcessor {
         }
         return localWord;
     }
-
-    /**
-     */
-    public RussianNameProcessor() {
-    }
-
 }
