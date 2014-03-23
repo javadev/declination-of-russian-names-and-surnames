@@ -38,6 +38,27 @@ public class RussianName {
     // new RussianName('Евгений Павлович Козлов')      // в таком виде тоже
     // new RussianName('Козлов', 'Евгений')        // можно явно указать составляющие
     // new RussianName('Кунтидия', 'Убиреко', '', 'f') // можно явно указать пол ('m' или 'f')
+    public RussianName(final String fullName) {
+        Matcher m = Pattern.compile("^\\s*(\\S+)(\\s+(\\S+)(\\s+(\\S+))?)?\\s*$").matcher(fullName);
+        if (!m.matches()) {
+            throw new IllegalArgumentException("Cannot parse supplied name");
+        }
+        if (m.group(5) != null && m.group(3).matches("(ич|на)$") && !m.group(5).matches("(ич|на)$")) {
+            // Иван Петрович Сидоров
+            this.lastName = m.group(5);
+            this.firstName = m.group(1);
+            this.middleName = m.group(3);
+            this.fullNameSurnameLast = true;
+        } else {
+            // Сидоров Иван Петрович
+            this.lastName = m.group(1);
+            this.firstName = m.group(3);
+            this.middleName = m.group(5);
+            this.fullNameSurnameLast = false;
+        }
+        this.sex = getSex();
+    }
+    
     public RussianName(final String lastName, final String firstName, final String middleName, final String sex) {
         if (firstName == null) {
             Matcher m = Pattern.compile("^\\s*(\\S+)(\\s+(\\S+)(\\s+(\\S+))?)?\\s*$").matcher(lastName);
@@ -67,7 +88,7 @@ public class RussianName {
     }
 
     private String getSex() {
-        if (this.middleName.length() > 2) {
+        if (this.middleName != null && this.middleName.length() > 2) {
             if ("ич".equals(this.middleName.substring(this.middleName.length() - 2))) {
                 return SEX_M;
             } else if ("на".equals(this.middleName.substring(this.middleName.length() - 2))) {
@@ -93,9 +114,5 @@ public class RussianName {
     }
     public String middleName(String gcase) {
         return RussianNameProcessor.word(middleName, this.sex, "middleName", gcase);
-    }
-    public static void main(String[] args) {
-        RussianName russianName = new RussianName("Козлов", "Евгений", "Павлович", "m");
-        System.out.println(russianName.fullName("genitive"));        
     }
 }

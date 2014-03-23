@@ -185,7 +185,7 @@ public final class RussianNameProcessor {
         }
 
         // составные слова
-        if (word.matches("[-]")) {
+        if (word != null && word.matches("[-]")) {
                 String[] list = word.split("-");
                 StringBuilder resultList = new StringBuilder();
                 for(int i = 0, n = list.length; i < n; i++) {
@@ -198,7 +198,7 @@ public final class RussianNameProcessor {
         }
 
         // Иванов И. И.
-        if (Pattern.compile("^[А-ЯЁ]\\.?$", Pattern.CASE_INSENSITIVE).matcher(word).matches()) {
+        if (word != null && Pattern.compile("^[А-ЯЁ]\\.?$", Pattern.CASE_INSENSITIVE).matcher(word).matches()) {
             return word;
         }
 
@@ -211,12 +211,12 @@ public final class RussianNameProcessor {
                 }
         }
         String pick = pick(word, sex, gcase, localRules.get("suffixes"), false);
-        return pick != null ? pick : word;
+        return pick != null ? pick : word == null ? "" : word;
     }
 
     // выбираем из списка правил первое подходящее и применяем 
     private static String pick(String word, String sex, String gcase, List<Object> rules, boolean matchWholeWord) {
-        String wordLower = word.toLowerCase();
+        String wordLower = word == null ? "" : word.toLowerCase();
         for (int i = 0, n = rules.size(); i < n; i++) {
             if (ruleMatch(wordLower, sex, rules.get(i), matchWholeWord)) {
                 return applyMod(word, gcase, rules.get(i));
@@ -228,11 +228,11 @@ public final class RussianNameProcessor {
     // проверяем, подходит ли правило к слову
     private static boolean ruleMatch(String word, String sex, final Object rule, boolean matchWholeWord) {
         final Map<String, List<String>> localRule = (Map<String, List<String>>) rule;    
-        if (localRule.get("sex").equals(sexM) && sex.equals(sexF)) { 
+        if (localRule.get("sex").get(0).equals(sexM) && sex.equals(sexF)) { 
                 // male by default
                 return false;
             }
-            if (localRule.get("sex").equals(sexF) && !sex.equals(sexF)) {
+            if (localRule.get("sex").get(0).equals(sexF) && !sex.equals(sexF)) {
                 return false;
             }
             for (int i = 0, n = localRule.get("test").size(); i < n; i++) {
@@ -266,7 +266,7 @@ public final class RussianNameProcessor {
         }
         String localWord = word;
         for(int i = 0, n = mod.length(); i < n; i++) {
-            String c = mod.substring(i, 1);
+            String c = mod.substring(i, i + 1);
             if (".".equals(c)) {
             } else if ("-".equals(c)) {
                 localWord = localWord.substring(0, localWord.length() - 1);
