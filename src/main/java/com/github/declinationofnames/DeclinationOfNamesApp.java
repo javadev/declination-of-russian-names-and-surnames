@@ -133,8 +133,6 @@ public class DeclinationOfNamesApp extends javax.swing.JFrame {
         }
     }
 
-    private MoneyToStr moneyToStrTxt = new MoneyToStr(MoneyToStr.Currency.RUR, MoneyToStr.Language.RUS, MoneyToStr.Pennies.TEXT);
-    private MoneyToStr moneyToStrNum = new MoneyToStr(MoneyToStr.Currency.RUR, MoneyToStr.Language.RUS, MoneyToStr.Pennies.NUMBER);
     /** Creates new form */
     public DeclinationOfNamesApp() {
         initComponents();
