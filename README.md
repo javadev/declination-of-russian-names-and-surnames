@@ -1,4 +1,4 @@
-Declination-of-Russian-names-and-surnames [![Build Status](https://secure.travis-ci.org/javadev/Declination-of-Russian-names-and-surnames.png)](http://travis-ci.org/javadev)
+Declination-of-Russian-names-and-surnames [![Build Status](https://secure.travis-ci.org/javadev/Declination-of-Russian-names-and-surnames.png)](https://travis-ci.org/javadev/Declination-of-Russian-names-and-surnames)
 =========================================
 
 The java/swing application for declination of Russian names and surnames
