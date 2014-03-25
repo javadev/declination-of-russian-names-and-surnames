@@ -37,11 +37,11 @@ public class RussianNameTest {
     public void name_first_converter() {
         // в таком виде тоже
         RussianName name = new RussianName("Евгений Павлович Козлов");
-        assertEquals("Козлова Евгения Павловича", name.fullName(RussianNameProcessor.gcaseRod));
-        assertEquals("Козлову Евгению Павловичу", name.fullName(RussianNameProcessor.gcaseDat));
-        assertEquals("Козлова Евгения Павловича", name.fullName(RussianNameProcessor.gcaseVin));
-        assertEquals("Козловым Евгением Павловичем", name.fullName(RussianNameProcessor.gcaseTvor));
-        assertEquals("Козлове Евгении Павловиче", name.fullName(RussianNameProcessor.gcasePred));
+        assertEquals("Евгения Павловича Козлова", name.fullName(RussianNameProcessor.gcaseRod));
+        assertEquals("Евгению Павловичу Козлову", name.fullName(RussianNameProcessor.gcaseDat));
+        assertEquals("Евгения Павловича Козлова", name.fullName(RussianNameProcessor.gcaseVin));
+        assertEquals("Евгением Павловичем Козловым", name.fullName(RussianNameProcessor.gcaseTvor));
+        assertEquals("Евгении Павловиче Козлове", name.fullName(RussianNameProcessor.gcasePred));
     }
 
     @Test
