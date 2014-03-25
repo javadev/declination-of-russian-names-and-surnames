@@ -43,7 +43,7 @@ public class RussianName {
         if (!m.matches()) {
             throw new IllegalArgumentException("Cannot parse supplied name");
         }
-        if (m.group(5) != null && m.group(3).matches(".*(ич|на)$") && !m.group(5).matches("(ич|на)$")) {
+        if (m.group(5) != null && m.group(3).matches(".*(ич|на)$") && !m.group(5).matches(".*(ич|на)$")) {
             // Иван Петрович Сидоров
             this.lastName = m.group(5);
             this.firstName = m.group(1);
