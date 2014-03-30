@@ -34,10 +34,10 @@ public class RussianName {
     private final String middleName;
     private final String sex;
     private final boolean fullNameSurnameLast;
-    // new RussianName('Козлов Евгений Павлович')      // годится обычная форма
-    // new RussianName('Евгений Павлович Козлов')      // в таком виде тоже
-    // new RussianName('Козлов', 'Евгений')        // можно явно указать составляющие
-    // new RussianName('Кунтидия', 'Убиреко', '', 'f') // можно явно указать пол ('m' или 'f')
+    // new RussianName("Козлов Евгений Павлович")      // годится обычная форма
+    // new RussianName('Евгений Павлович Козлов")      // в таком виде тоже
+    // new RussianName("Козлов", "Евгений")        // можно явно указать составляющие
+    // new RussianName("Кунтидия", "Убиреко", "", "f") // можно явно указать пол ('m' или 'f')
     public RussianName(final String fullName) {
         Matcher m = Pattern.compile("^\\s*(\\S+)(\\s+(\\S+)(\\s+(\\S+))?)?\\s*$").matcher(fullName);
         if (!m.matches()) {
@@ -60,30 +60,10 @@ public class RussianName {
     }
     
     public RussianName(final String lastName, final String firstName, final String middleName, final String sex) {
-        if (firstName == null) {
-            Matcher m = Pattern.compile("^\\s*(\\S+)(\\s+(\\S+)(\\s+(\\S+))?)?\\s*$").matcher(lastName);
-            if (!m.matches()) {
-                throw new IllegalArgumentException("Cannot parse supplied name");
-            }
-            if (m.group(5) != null && m.group(3).matches("(ич|на)$") && !m.group(5).matches("(ич|на)$")) {
-                // Иван Петрович Сидоров
-                this.lastName = m.group(5);
-                this.firstName = m.group(1);
-                this.middleName = m.group(3);
-                this.fullNameSurnameLast = true;
-            } else {
-                // Сидоров Иван Петрович
-                this.lastName = m.group(1);
-                this.firstName = m.group(3);
-                this.middleName = m.group(5);
-                this.fullNameSurnameLast = false;
-            }
-        } else {
-            this.lastName = lastName;
-            this.firstName = firstName == null ? "" : firstName;
-            this.middleName = middleName == null ? "" : middleName;
-            this.fullNameSurnameLast = false;
-        }
+        this.lastName = lastName;
+        this.firstName = firstName == null ? "" : firstName;
+        this.middleName = middleName == null ? "" : middleName;
+        this.fullNameSurnameLast = false;
         this.sex = sex == null ? getSex() : sex;
     }
 
