@@ -270,9 +270,13 @@ public class DeclinationOfNamesApp extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Склонение русских имён и фамилий");
 
+        jTabbedPane6.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel2.setMaximumSize(new java.awt.Dimension(610, 444));
         jPanel2.setPreferredSize(new java.awt.Dimension(662, 447));
+
+        jTabbedPane3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
 
         jScrollPane7.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
@@ -282,6 +286,8 @@ public class DeclinationOfNamesApp extends javax.swing.JFrame {
 
         jTabbedPane3.addTab("Дательный", jScrollPane7);
 
+        jTabbedPane1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+
         jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         jTextArea1.setColumns(20);
@@ -290,7 +296,10 @@ public class DeclinationOfNamesApp extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Родительный", jScrollPane3);
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel2.setText("ФИО в именительном падеже:");
+
+        jTabbedPane2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
 
         jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
@@ -300,6 +309,8 @@ public class DeclinationOfNamesApp extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Предложный", jScrollPane4);
 
+        jTabbedPane4.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+
         jScrollPane5.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         jTextArea5.setColumns(20);
@@ -307,6 +318,8 @@ public class DeclinationOfNamesApp extends javax.swing.JFrame {
         jScrollPane5.setViewportView(jTextArea5);
 
         jTabbedPane4.addTab("Винительный", jScrollPane5);
+
+        jTabbedPane5.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
 
         jScrollPane6.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
@@ -325,6 +338,7 @@ public class DeclinationOfNamesApp extends javax.swing.JFrame {
         });
 
         jTextField1.setEditable(true);
+        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -410,7 +424,7 @@ public class DeclinationOfNamesApp extends javax.swing.JFrame {
                     .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel2Layout.createSequentialGroup()
                         .add(jLabel2)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jTextField1, 0, 355, Short.MAX_VALUE))
+                        .add(jTextField1, 0, 278, Short.MAX_VALUE))
                     .add(org.jdesktop.layout.GroupLayout.LEADING, jTabbedPane1))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -459,13 +473,15 @@ public class DeclinationOfNamesApp extends javax.swing.JFrame {
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2Layout.createSequentialGroup()
                         .add(jButton9, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(58, 58, 58)))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         jTabbedPane6.addTab("Конвертор", jPanel2);
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel5.setText("Копировать в буфер");
 
+        jComboBox4.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "не копировать", "Родительный", "Дательный", "Винительный", "Творительный", "Предложный" }));
         jComboBox4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -481,7 +497,7 @@ public class DeclinationOfNamesApp extends javax.swing.JFrame {
                 .add(23, 23, 23)
                 .add(jLabel5)
                 .add(29, 29, 29)
-                .add(jComboBox4, 0, 404, Short.MAX_VALUE)
+                .add(jComboBox4, 0, 356, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -491,18 +507,19 @@ public class DeclinationOfNamesApp extends javax.swing.JFrame {
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel5)
                     .add(jComboBox4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(614, Short.MAX_VALUE))
+                .addContainerGap(600, Short.MAX_VALUE))
         );
 
         jTabbedPane6.addTab("Настройки", jPanel1);
 
         jTabbedPane7.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        jTabbedPane7.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
 
         jScrollPane8.setBorder(null);
 
         jTextPane3.setEditable(false);
         jTextPane3.setBorder(null);
-        jTextPane3.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jTextPane3.setFont(new java.awt.Font("SansSerif", 0, 16)); // NOI18N
         jScrollPane8.setViewportView(jTextPane3);
 
         jTabbedPane7.addTab("java", jScrollPane8);
@@ -515,7 +532,7 @@ public class DeclinationOfNamesApp extends javax.swing.JFrame {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jTabbedPane7, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 645, Short.MAX_VALUE)
+            .add(jTabbedPane7, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 639, Short.MAX_VALUE)
         );
 
         jTabbedPane6.addTab("Исходный текст", jPanel3);
