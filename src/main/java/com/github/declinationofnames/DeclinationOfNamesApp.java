@@ -281,6 +281,7 @@ public class DeclinationOfNamesApp extends javax.swing.JFrame {
         jScrollPane7.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         jTextArea7.setColumns(20);
+        jTextArea7.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         jTextArea7.setRows(5);
         jScrollPane7.setViewportView(jTextArea7);
 
@@ -291,6 +292,7 @@ public class DeclinationOfNamesApp extends javax.swing.JFrame {
         jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         jTextArea1.setRows(5);
         jScrollPane3.setViewportView(jTextArea1);
 
@@ -304,6 +306,7 @@ public class DeclinationOfNamesApp extends javax.swing.JFrame {
         jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         jTextArea4.setColumns(20);
+        jTextArea4.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         jTextArea4.setRows(5);
         jScrollPane4.setViewportView(jTextArea4);
 
@@ -314,6 +317,7 @@ public class DeclinationOfNamesApp extends javax.swing.JFrame {
         jScrollPane5.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         jTextArea5.setColumns(20);
+        jTextArea5.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         jTextArea5.setRows(5);
         jScrollPane5.setViewportView(jTextArea5);
 
@@ -324,6 +328,7 @@ public class DeclinationOfNamesApp extends javax.swing.JFrame {
         jScrollPane6.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         jTextArea6.setColumns(20);
+        jTextArea6.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         jTextArea6.setRows(5);
         jScrollPane6.setViewportView(jTextArea6);
 
