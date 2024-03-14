@@ -36,7 +36,7 @@ The Declination of Names application allows users to generate different grammati
 
 #### Screenshots
 
-[Add screenshots here if available]
+[![Screen short](declination-of-names.png)](https://github.com/javadev/declination-of-russian-names-and-surnames/)
 
 #### Installation
 
@@ -65,5 +65,3 @@ Contributions to this project are welcome. Fork the repository and submit a pull
 #### Bug Reporting
 
 To report bugs or suggest improvements, please open an issue on the GitHub repository.
-
-[![Screen short](declination-of-names.png)](https://github.com/javadev/declination-of-russian-names-and-surnames/)
