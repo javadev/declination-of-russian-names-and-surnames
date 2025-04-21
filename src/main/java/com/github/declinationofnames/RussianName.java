@@ -43,7 +43,9 @@ public class RussianName {
         if (!m.matches()) {
             throw new IllegalArgumentException("Cannot parse supplied name");
         }
-        if (m.group(5) != null && m.group(3).matches(".*(ич|на)$") && !m.group(5).matches(".*(ич|на)$")) {
+        if (m.group(5) != null
+                && m.group(3).matches(".*(ич|на)$")
+                && !m.group(5).matches(".*(ич|на)$")) {
             // Иван Петрович Сидоров
             this.lastName = m.group(5);
             this.firstName = m.group(1);
@@ -58,8 +60,12 @@ public class RussianName {
         }
         this.sex = getSex();
     }
-    
-    public RussianName(final String lastName, final String firstName, final String middleName, final String sex) {
+
+    public RussianName(
+            final String lastName,
+            final String firstName,
+            final String middleName,
+            final String sex) {
         this.lastName = lastName;
         this.firstName = firstName == null ? "" : firstName;
         this.middleName = middleName == null ? "" : middleName;
@@ -77,21 +83,24 @@ public class RussianName {
         }
         return "";
     }
-    
+
     public String fullName(String gcase) {
-            return (
-                    (fullNameSurnameLast ? "" : lastName(gcase) + " ")
-                    + firstName(gcase) + " " + middleName(gcase) +
-                    (fullNameSurnameLast ? " " + lastName(gcase) : "")
-            ).replaceAll("^ +| +$", "");
+        return ((fullNameSurnameLast ? "" : lastName(gcase) + " ")
+                        + firstName(gcase)
+                        + " "
+                        + middleName(gcase)
+                        + (fullNameSurnameLast ? " " + lastName(gcase) : ""))
+                .replaceAll("^ +| +$", "");
     }
-    
+
     public String lastName(String gcase) {
         return RussianNameProcessor.word(lastName, sex, "lastName", gcase);
     }
+
     public String firstName(String gcase) {
         return RussianNameProcessor.word(firstName, this.sex, "firstName", gcase);
     }
+
     public String middleName(String gcase) {
         return RussianNameProcessor.word(middleName, this.sex, "middleName", gcase);
     }
